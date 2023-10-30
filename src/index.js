@@ -8,9 +8,10 @@ const { textToImage } = require("./api/stability"); // Update the path according
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-const SERVER_URL = process.env.SERVER_URL || "http://localhost:3000";
+const REACT_APP_SERVER_URL =
+	process.env.REACT_APP_SERVER_URL || "http://localhost:3000";
 
-app.use(cors(SERVER_URL));
+app.use(cors(REACT_APP_SERVER_URL));
 app.use(express.json());
 app.use(bodyParser.json({ limit: "10mb" }));
 

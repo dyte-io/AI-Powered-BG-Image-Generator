@@ -8,11 +8,12 @@ function Home({ meetingId }) {
 	const { updateAIImageUrl } = useAIImage();
 	const navigate = useNavigate();
 
-	const SERVER_URL = process.env.SERVER_URL || "http://localhost:3000";
+	const REACT_APP_SERVER_URL =
+		process.env.REACT_APP_SERVER_URL || "http://localhost:3000";
 
 	const handleUpload = async () => {
 		try {
-			const response = await fetch(SERVER_URL + "/upload", {
+			const response = await fetch(REACT_APP_SERVER_URL + "/upload", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
