@@ -21,19 +21,24 @@ app.post("/meetings", async (req, res) => {
 });
 
 app.post("/meetings/:meetingId/participants", async (req, res) => {
-	const meetingId = req.params.meetingId;
-	const { name, preset_name } = req.body;
-	const client_specific_id = `react-samples::${name.replaceAll(
-		" ",
-		"-"
-	)}-${Math.random().toString(36).substring(2, 7)}`;
-	const response = await DyteAPI.post(`/meetings/${meetingId}/participants`, {
-		name,
-		preset_name,
-		client_specific_id,
-	});
+	try {
+		const meetingId = req.params.meetingId;
+		const { name, preset_name } = req.body;
+		const client_specific_id = `react-samples::${name.replaceAll(
+			" ",
+			"-"
+		)}-${Math.random().toString(36).substring(2, 7)}`;
+		const response = await DyteAPI.post(`/meetings/${meetingId}/participants`, {
+			name,
+			preset_name,
+			client_specific_id,
+		});
 
-	return res.status(response.status).json(response.data);
+		return res.status(response.status).json(response.data);
+	} catch (error) {
+		console.error(error);
+		return res.status(504).json(error);
+	}
 });
 
 app.post("/upload", async (req, res) => {
