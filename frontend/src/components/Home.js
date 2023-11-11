@@ -59,7 +59,7 @@ function Home({ meetingId }) {
 		>
 			<h2
 				style={{
-					color: "#1b263b",
+					color: "#00000",
 					fontWeight: "bold",
 					fontSize: "1.5rem",
 					marginBottom: "20px",
@@ -76,7 +76,7 @@ function Home({ meetingId }) {
 					paddingBottom: "8px",
 					paddingLeft: "4px",
 					paddingRight: "4px",
-					border: "2px #0096c7 solid",
+					border: "2px #2260FD solid",
 					borderRadius: "4px",
 					width: "300px",
 					marginBottom: "20px",
@@ -85,7 +85,7 @@ function Home({ meetingId }) {
 			<button
 				onClick={handleCreateMeeting}
 				style={{
-					backgroundColor: "#0096c7",
+					backgroundColor: "#2260FD",
 					color: "white",
 					padding: "10px 20px",
 					borderRadius: "4px",

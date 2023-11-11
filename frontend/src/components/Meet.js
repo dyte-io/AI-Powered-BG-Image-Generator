@@ -48,7 +48,7 @@ const Meet = () => {
 					method: "POST",
 					body: JSON.stringify({
 						name: "new user",
-						preset_name: "MyNewPreset",
+						preset_name: "group_call_host",
 						meeting_id: meetingId,
 					}),
 					headers: { "Content-Type": "application/json" },
@@ -90,7 +90,7 @@ const Meet = () => {
 	useEffect(() => {
 		if (userToken) {
 			provideDyteDesignSystem(meetingEl.current, {
-				theme: "dark",
+				theme: "light",
 			});
 		}
 	}, [userToken]);
